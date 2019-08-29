@@ -1,0 +1,7 @@
+<div id="chat-box" class="Field">
+    <form class="u-cf" #chatForm="ngForm" (ngSubmit)="sendMessage(newMessage);">
+        <input class="Textarea" id="textarea2" placeholder="Type Your Message Here" name="newMessage" autocomplete="off" #newMessageRef="ngModel" (keydown)="startTyping()" #newMessage ngModel>
+        <div class="u-floatLeft" *ngIf="newMessageRef.errors?.required">Please Type Your Message</div>
+        <button (click)="sendMessage(newMessage)" type="button" class="Button Button--blue u-floatRight">Send</button>
+    </form>
+</div>

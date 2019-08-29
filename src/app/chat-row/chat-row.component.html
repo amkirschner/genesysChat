@@ -1,0 +1,11 @@
+<div *ngIf="!message.notification && message.text !== ''" class="chat-row u-cf">
+    <div class="message" [ngClass]="message.type === 'External' ||  message.type === 'Agent' ? 'u-floatLeft left' : 'u-floatRight right'">
+        <div *ngIf="message.type !== 'Client'">{{message.firstName}}</div>
+        <div *ngIf="message.type === 'Client'">You</div>
+        <div *ngIf="!message.isPushUrl" [innerHTML]="message.text" class="u-cf"></div>
+        <div *ngIf="message.isPushUrl" class="u-cf">
+            <a href="http://{{message.text}}" target="_blank">{{message.text}}</a>
+        </div>
+    </div>
+</div>
+<div *ngIf="message.notification" class="chat-row u-cf notification">{{message.text}}</div>

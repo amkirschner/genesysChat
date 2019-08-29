@@ -1,0 +1,11 @@
+<div id="logo"><img alt="Mutual of Omaha Insurance Company" src="https://cdn.mutualofomaha.com/images/corporate/logos/mutual-brand-blue.svg"></div>
+<div id="banner"></div>
+<div id="chat-box-container">
+    <div id="chat-box-message-container">
+        <div id="chat-box-inner-container" class="u-cf">
+            <chat-list class="u-cf"></chat-list>
+        </div>
+        <div *ngIf="agent.isTyping" class="typing-indicator"><span></span><span></span><span></span>{{agent.nickName}} is Typing ...</div>
+    </div>
+    <chat-form></chat-form>
+</div>
